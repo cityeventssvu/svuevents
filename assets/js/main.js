@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var toggleText = document.getElementById('themeToggleText');
 	var scrollTopButton = document.getElementById('scrollTopButton');
 
+	// Returns 'dark' or 'light' based on saved preference or defaults to 'dark'
 	function getPreferredTheme() {
 		var savedTheme = localStorage.getItem('theme');
 		if (savedTheme === 'dark' || savedTheme === 'light') {
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		return 'dark';
 	}
 
+	// Updates the toggle button's appearance based on the current theme
 	function updateToggleUi(theme) {
 		var isDark = theme === 'dark';
 
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
+	// Applies the specified theme to the document and updates related UI elements
 	function applyTheme(theme) {
 		var isDark = theme === 'dark';
 
@@ -48,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	applyTheme(getPreferredTheme());
 
+	// Shows or hides the scroll-to-top button based on the current scroll position
 	function updateScrollTopButton() {
 		if (!scrollTopButton) {
 			return;
@@ -77,12 +81,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
+	// Contact form validation
 	var contactForm = document.querySelector('.js-contact-form');
 	if (contactForm) {
 		var nameInput = contactForm.querySelector('#name');
 		var emailInput = contactForm.querySelector('#email');
 		var messageInput = contactForm.querySelector('#message');
 
+		// Validates the email format using a regular expression
 		function isValidEmail(email) {
 			return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 		}

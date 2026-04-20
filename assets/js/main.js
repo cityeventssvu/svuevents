@@ -83,16 +83,32 @@ document.addEventListener('DOMContentLoaded', function () {
 			return !emailInvalid;
 		}
 
-		contactForm.addEventListener('submit', function (event) {
-			var nameValue = nameInput ? nameInput.value.trim() : '';
-			var messageValue = messageInput ? messageInput.value.trim() : '';
+		function validateNameField() {
+			if (!nameInput) {
+				return false;
+			}
 
+			var nameValue = nameInput.value.trim();
 			var nameInvalid = nameValue === '';
-			var emailInvalid = !validateEmailField();
-			var messageInvalid = messageValue === '';
-
 			markInvalid(nameInput, nameInvalid);
+			return !nameInvalid;
+		}
+
+		function validateMessageField() {
+			if (!messageInput) {
+				return false;
+			}
+
+			var messageValue = messageInput.value.trim();
+			var messageInvalid = messageValue === '';
 			markInvalid(messageInput, messageInvalid);
+			return !messageInvalid;
+		}
+
+		contactForm.addEventListener('submit', function (event) {
+			var nameInvalid = !validateNameField();
+			var emailInvalid = !validateEmailField();
+			var messageInvalid = !validateMessageField();
 
 			if (nameInvalid || emailInvalid || messageInvalid) {
 				event.preventDefault();
@@ -110,6 +126,18 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (emailInput) {
 			emailInput.addEventListener('blur', function () {
 				validateEmailField();
+			});
+		}
+
+		if (nameInput) {
+			nameInput.addEventListener('blur', function () {
+				validateNameField();
+			});
+		}
+
+		if (messageInput) {
+			messageInput.addEventListener('blur', function () {
+				validateMessageField();
 			});
 		}
 

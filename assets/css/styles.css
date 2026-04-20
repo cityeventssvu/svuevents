@@ -114,6 +114,16 @@ body {
 	padding: 2rem;
 }
 
+html[data-bs-theme="dark"] .carousel-caption {
+	color: #f3f7ff;
+}
+
+html[data-bs-theme="dark"] .carousel-caption p,
+html[data-bs-theme="dark"] .carousel-caption small,
+html[data-bs-theme="dark"] .carousel-caption h5 {
+	color: #f3f7ff;
+}
+
 .category-btn {
 	border-color: var(--surface-border);
 	color: var(--text-main);

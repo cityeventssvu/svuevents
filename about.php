@@ -29,41 +29,42 @@ include 'include/navbar.php';
 	<div class="row g-4">
 		<div class="col-md-6 col-lg-4">
 			<div class="card h-100 border-0 shadow-sm p-3">
-				<h3 class="h5 mb-1">Khaled </h3>
-				<p class="small text-secondary mb-2">khaled_</p>
+				<h3 class="h5 mb-1">Morhaf Hammadi</h3>
+				<p class="small text-secondary mb-2">Morhaf_210426-C5</p>
 				<span class="badge text-bg-info align-self-start">Project Lead</span>
 			</div>
 		</div>
 		<div class="col-md-6 col-lg-4">
 			<div class="card h-100 border-0 shadow-sm p-3">
-				<h3 class="h5 mb-1">Sara </h3>
-				<p class="small text-secondary mb-2">sara</p>
+				<h3 class="h5 mb-1">Abdul sattar</h3>
+				<p class="small text-secondary mb-2">abdul_sattar_233965-C3</p>
 				<span class="badge text-bg-info align-self-start">Frontend Developer</span>
 			</div>
 		</div>
 		<div class="col-md-6 col-lg-4">
 			<div class="card h-100 border-0 shadow-sm p-3">
-				<h3 class="h5 mb-1">Omar </h3>
-				<p class="small text-secondary mb-2">omar</p>
+				<h3 class="h5 mb-1">Abdalrahman Hamoud</h3>
+				<p class="small text-secondary mb-2">abdalrahman_289639-C2</p>
 				<span class="badge text-bg-info align-self-start">Backend Developer</span>
 			</div>
 		</div>
 		<div class="col-md-6 col-lg-6">
 			<div class="card h-100 border-0 shadow-sm p-3">
-				<h3 class="h5 mb-1">Mona</h3>
-				<p class="small text-secondary mb-2">mona</p>
+				<h3 class="h5 mb-1">Jaafar Khalouf</h3>
+				<p class="small text-secondary mb-2">Jafar_289711-C5</p>
 				<span class="badge text-bg-info align-self-start">Student Affairs Partner</span>
 			</div>
 		</div>
 		<div class="col-md-6 col-lg-6">
 			<div class="card h-100 border-0 shadow-sm p-3">
-				<h3 class="h5 mb-1">Yousef</h3>
-				<p class="small text-secondary mb-2">yousef</p>
+				<h3 class="h5 mb-1">yahya ismael</h3>
+				<p class="small text-secondary mb-2">yahya_132063-C5</p>
 				<span class="badge text-bg-info align-self-start">Outreach and Partnerships</span>
 			</div>
 		</div>
 	</div>
 </section>
+
 
 <section class="mb-4">
 	<div class="card border-0 shadow-sm p-4 p-md-5">

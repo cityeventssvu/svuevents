@@ -85,7 +85,8 @@ include 'include/navbar.php';
 							<span class="badge text-bg-info mb-2"><?php echo htmlspecialchars($event['category'] ?: 'General'); ?></span>
 							<h5 class="fw-bold"><?php echo htmlspecialchars($event['title']); ?></h5>
 							<p class="mb-1"><?php echo htmlspecialchars($event['location'] ?: 'City Venue'); ?></p>
-							<small><?php echo !empty($event['event_date']) ? date('M d, Y', strtotime($event['event_date'])) : 'Date to be announced'; ?></small>
+							<small class="d-block mb-2"><?php echo !empty($event['event_date']) ? date('M d, Y', strtotime($event['event_date'])) : 'Date to be announced'; ?></small>
+							<a href="event.php?id=<?php echo (int)$event['id']; ?>" class="btn btn-info btn-sm">View details</a>
 						</div>
 					</div>
 				<?php endforeach; ?>
@@ -110,6 +111,50 @@ include 'include/navbar.php';
 		<a href="events.php?filter=Family" class="btn btn-outline-light category-btn"><i class="bi bi-people me-2"></i>Family</a>
 		<a href="events.php?filter=Food" class="btn btn-outline-light category-btn"><i class="bi bi-cup-hot me-2"></i>Food</a>
 		<a href="events.php?filter=Community" class="btn btn-outline-light category-btn"><i class="bi bi-geo-alt me-2"></i>Community</a>
+	</div>
+</section>
+
+<!-- Team and policies section -->
+<section class="mb-5">
+	<div class="d-flex justify-content-between align-items-center mb-3">
+		<h2 class="h4 mb-0">Team and Partners</h2>
+	</div>
+	<div class="row g-4">
+		<div class="col-md-6 col-lg-4">
+			<div class="card h-100 border-0 shadow-sm p-3">
+				<h3 class="h5 mb-1">Morhaf Hammadi</h3>
+				<p class="small text-secondary mb-2">Morhaf_210426-C5</p>
+				<span class="badge text-bg-info align-self-start">Project Lead</span>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-4">
+			<div class="card h-100 border-0 shadow-sm p-3">
+				<h3 class="h5 mb-1">Abdul sattar</h3>
+				<p class="small text-secondary mb-2">abdul_sattar_233965-C3</p>
+				<span class="badge text-bg-info align-self-start">Frontend Developer</span>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-4">
+			<div class="card h-100 border-0 shadow-sm p-3">
+				<h3 class="h5 mb-1">Abdalrahman Hamoud</h3>
+				<p class="small text-secondary mb-2">abdalrahman_289639-C2</p>
+				<span class="badge text-bg-info align-self-start">Backend Developer</span>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-6">
+			<div class="card h-100 border-0 shadow-sm p-3">
+				<h3 class="h5 mb-1">Jaafar Khalouf</h3>
+				<p class="small text-secondary mb-2">Jafar_289711-C5</p>
+				<span class="badge text-bg-info align-self-start">Student Affairs Partner</span>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-6">
+			<div class="card h-100 border-0 shadow-sm p-3">
+				<h3 class="h5 mb-1">yahya ismael</h3>
+				<p class="small text-secondary mb-2">yahya_132063-C5</p>
+				<span class="badge text-bg-info align-self-start">Outreach and Partnerships</span>
+			</div>
+		</div>
 	</div>
 </section>
 

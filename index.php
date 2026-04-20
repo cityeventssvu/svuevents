@@ -113,12 +113,12 @@ include 'include/navbar.php';
 		<h2 class="h4 mb-0">Quick Categories</h2>
 	</div>
 	<div class="d-flex flex-wrap gap-2">
-		<a href="events.php?category=Culture" class="btn btn-outline-light category-btn"><i class="bi bi-palette me-2"></i>Culture</a>
-		<a href="events.php?category=Sports" class="btn btn-outline-light category-btn"><i class="bi bi-trophy me-2"></i>Sports</a>
-		<a href="events.php?category=Music" class="btn btn-outline-light category-btn"><i class="bi bi-music-note-beamed me-2"></i>Music</a>
-		<a href="events.php?category=Family" class="btn btn-outline-light category-btn"><i class="bi bi-people me-2"></i>Family</a>
-		<a href="events.php?category=Food" class="btn btn-outline-light category-btn"><i class="bi bi-cup-hot me-2"></i>Food</a>
-		<a href="events.php?category=Community" class="btn btn-outline-light category-btn"><i class="bi bi-geo-alt me-2"></i>Community</a>
+		<a href="events.php?filter=Culture" class="btn btn-outline-light category-btn"><i class="bi bi-palette me-2"></i>Culture</a>
+		<a href="events.php?filter=Sports" class="btn btn-outline-light category-btn"><i class="bi bi-trophy me-2"></i>Sports</a>
+		<a href="events.php?filter=Music" class="btn btn-outline-light category-btn"><i class="bi bi-music-note-beamed me-2"></i>Music</a>
+		<a href="events.php?filter=Family" class="btn btn-outline-light category-btn"><i class="bi bi-people me-2"></i>Family</a>
+		<a href="events.php?filter=Food" class="btn btn-outline-light category-btn"><i class="bi bi-cup-hot me-2"></i>Food</a>
+		<a href="events.php?filter=Community" class="btn btn-outline-light category-btn"><i class="bi bi-geo-alt me-2"></i>Community</a>
 	</div>
 </section>
 

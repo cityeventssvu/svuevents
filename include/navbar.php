@@ -2,6 +2,12 @@
 if (!isset($pageTitle)) {
     $pageTitle = 'City Events';
 }
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+$isAdminLoggedIn = isset($_SESSION['admin_id']);
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
@@ -36,6 +42,13 @@ if (!isset($pageTitle)) {
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <?php if ($isAdminLoggedIn): ?>
+                        <a class="nav-link" href="admin/dashboard.php">Dashboard</a>
+                    <?php else: ?>
+                        <a class="nav-link" href="admin/login.php">Admin Login</a>
+                    <?php endif; ?>
                 </li>
             </ul>
 

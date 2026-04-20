@@ -29,36 +29,36 @@ include 'include/navbar.php';
 	<div class="row g-4">
 		<div class="col-md-6 col-lg-4">
 			<div class="card h-100 border-0 shadow-sm p-3">
-				<h3 class="h5 mb-1">Khaled Al-Nasser</h3>
-				<p class="small text-secondary mb-2">khaled_192356</p>
+				<h3 class="h5 mb-1">Khaled </h3>
+				<p class="small text-secondary mb-2">khaled_</p>
 				<span class="badge text-bg-info align-self-start">Project Lead</span>
 			</div>
 		</div>
 		<div class="col-md-6 col-lg-4">
 			<div class="card h-100 border-0 shadow-sm p-3">
-				<h3 class="h5 mb-1">Sara Al-Harbi</h3>
-				<p class="small text-secondary mb-2">sara_184220</p>
+				<h3 class="h5 mb-1">Sara </h3>
+				<p class="small text-secondary mb-2">sara</p>
 				<span class="badge text-bg-info align-self-start">Frontend Developer</span>
 			</div>
 		</div>
 		<div class="col-md-6 col-lg-4">
 			<div class="card h-100 border-0 shadow-sm p-3">
-				<h3 class="h5 mb-1">Omar Al-Mutairi</h3>
-				<p class="small text-secondary mb-2">omar_201143</p>
+				<h3 class="h5 mb-1">Omar </h3>
+				<p class="small text-secondary mb-2">omar</p>
 				<span class="badge text-bg-info align-self-start">Backend Developer</span>
 			</div>
 		</div>
 		<div class="col-md-6 col-lg-6">
 			<div class="card h-100 border-0 shadow-sm p-3">
-				<h3 class="h5 mb-1">Mona Al-Salem</h3>
-				<p class="small text-secondary mb-2">mona_176598</p>
+				<h3 class="h5 mb-1">Mona</h3>
+				<p class="small text-secondary mb-2">mona</p>
 				<span class="badge text-bg-info align-self-start">Student Affairs Partner</span>
 			</div>
 		</div>
 		<div class="col-md-6 col-lg-6">
 			<div class="card h-100 border-0 shadow-sm p-3">
-				<h3 class="h5 mb-1">Yousef Al-Qahtani</h3>
-				<p class="small text-secondary mb-2">yousef_210874</p>
+				<h3 class="h5 mb-1">Yousef</h3>
+				<p class="small text-secondary mb-2">yousef</p>
 				<span class="badge text-bg-info align-self-start">Outreach and Partnerships</span>
 			</div>
 		</div>

@@ -156,7 +156,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 				<div class="col-md-6">
 					<label for="image_url" class="form-label">Image URL</label>
-					<input type="url" id="image_url" name="image_url" class="form-control" value="<?php echo htmlspecialchars($imageUrl); ?>" placeholder="https://example.com/image.jpg">
+					<input type="text" id="image_url" name="image_url" class="form-control" value="<?php echo htmlspecialchars($imageUrl); ?>" placeholder="https://example.com/image.jpg or uploads/image.jpg">
+					<div class="form-text">If you upload a new image below, this image path will be updated automatically after saving.</div>
 				</div>
 
 				<div class="col-md-6">

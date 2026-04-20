@@ -18,6 +18,7 @@ $category = '';
 $imageUrl = '';
 $errorMessage = '';
 
+// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$title = trim($_POST['title'] ?? '');
 	$description = trim($_POST['description'] ?? '');
@@ -32,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$errorMessage = 'Please select a valid category.';
 	} else {
 		$finalImage = $imageUrl;
-
+		// Handle image upload if a file was provided
 		if (!isset($_FILES['image_file']) || (int)$_FILES['image_file']['error'] === UPLOAD_ERR_NO_FILE) {
 			// no file uploaded; use image URL if provided
 		} elseif ((int)$_FILES['image_file']['error'] === UPLOAD_ERR_OK) {
@@ -60,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		} else {
 			$errorMessage = 'Image upload failed. Please try again.';
 		}
-
+		// If no image URL provided and no file uploaded, set finalImage to empty string
 		if ($errorMessage === '') {
 			$stmt = $conn->prepare('INSERT INTO events (title, description, category, location, event_date, image) VALUES (?, ?, ?, ?, ?, ?)');
 
@@ -92,11 +93,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <main class="content-wrap">
 	<div class="container">
+		<!-- Header section -->
 		<div class="d-flex justify-content-between align-items-center mb-4">
 			<h1 class="h3 mb-0">Add New Event</h1>
 			<a href="dashboard.php" class="btn btn-outline-secondary btn-sm">Back to Dashboard</a>
 		</div>
-
+		<!-- Event form section -->
 		<div class="card border-0 shadow-sm p-4">
 			<?php if ($errorMessage !== ''): ?>
 				<div class="alert alert-danger" role="alert"><?php echo htmlspecialchars($errorMessage); ?></div>

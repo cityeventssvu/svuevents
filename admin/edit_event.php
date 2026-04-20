@@ -16,6 +16,7 @@ if ($eventId <= 0) {
 	exit;
 }
 
+// Fetch existing event data
 $event = null;
 $fetchStmt = $conn->prepare('SELECT id, title, description, category, location, event_date, image FROM events WHERE id = ? LIMIT 1');
 if ($fetchStmt) {
@@ -39,6 +40,7 @@ $category = (string)$event['category'];
 $imageUrl = (string)$event['image'];
 $errorMessage = '';
 
+/// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$title = trim($_POST['title'] ?? '');
 	$description = trim($_POST['description'] ?? '');
@@ -60,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			if (!is_dir($uploadDir)) {
 				mkdir($uploadDir, 0777, true);
 			}
-
+			// Validate and process uploaded image
 			$originalName = $_FILES['image_file']['name'];
 			$extension = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
 			$allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
@@ -80,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		} else {
 			$errorMessage = 'Image upload failed. Please try again.';
 		}
-
+		// If no image URL provided and no file uploaded, set finalImage to empty string
 		if ($errorMessage === '') {
 			$updateStmt = $conn->prepare('UPDATE events SET title = ?, description = ?, category = ?, location = ?, event_date = ?, image = ? WHERE id = ?');
 			if ($updateStmt) {
@@ -118,6 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			<a href="dashboard.php" class="btn btn-outline-secondary btn-sm">Back to Dashboard</a>
 		</div>
 
+		<!-- Event form section -->
 		<div class="card border-0 shadow-sm p-4">
 			<?php if ($errorMessage !== ''): ?>
 				<div class="alert alert-danger" role="alert"><?php echo htmlspecialchars($errorMessage); ?></div>

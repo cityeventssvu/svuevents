@@ -15,6 +15,7 @@ $eventsSql = '
 	ORDER BY event_date DESC, id DESC
 ';
 
+// Fetch events for dashboard
 $eventsResult = $conn->query($eventsSql);
 if ($eventsResult) {
 	while ($row = $eventsResult->fetch_assoc()) {
@@ -34,6 +35,7 @@ if ($eventsResult) {
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="siteNavbar">
+	<!-- Admin navbar section -->
 	<div class="container-fluid px-3 px-lg-4">
 		<a class="navbar-brand" href="dashboard.php">Admin Panel</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar" aria-controls="adminNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,6 +66,7 @@ if ($eventsResult) {
 </nav>
 
 <main class="content-wrap">
+	<!-- Dashboard content section -->
 	<div class="container-fluid px-3 px-lg-4">
 		<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
 			<div>

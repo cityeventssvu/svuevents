@@ -7,6 +7,7 @@ $message = '';
 $successMessage = '';
 $errorMessage = '';
 
+// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$name = trim($_POST['name'] ?? '');
 	$email = trim($_POST['email'] ?? '');
@@ -29,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include 'include/navbar.php';
 ?>
 
+<!-- Set page title for navbar -->
 <section class="mb-4">
 	<div class="p-4 rounded-4 border hero-surface">
 		<h1 class="h3 mb-2">Contact Us</h1>
@@ -36,6 +38,7 @@ include 'include/navbar.php';
 	</div>
 </section>
 
+<!-- Contact form section -->
 <section class="mb-4">
 	<div class="row g-4">
 		<div class="col-lg-7">
@@ -82,11 +85,11 @@ include 'include/navbar.php';
 				<ul class="list-unstyled mb-0 d-grid gap-3">
 					<li>
 						<p class="small text-secondary mb-1">General Email</p>
-						<p class="mb-0"><i class="bi bi-envelope me-2"></i>hello@cityevents.local</p>
+						<p class="mb-0"><i class="bi bi-envelope me-2"></i>svu@cityevents.local</p>
 					</li>
 					<li>
 						<p class="small text-secondary mb-1">Phone</p>
-						<p class="mb-0"><i class="bi bi-telephone me-2"></i>+1 (555) 123-4567</p>
+						<p class="mb-0"><i class="bi bi-telephone me-2"></i>+963 111 222 333</p>
 					</li>
 				</ul>
 			</div>

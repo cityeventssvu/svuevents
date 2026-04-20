@@ -2,12 +2,14 @@
 $pageTitle = 'City Events - All Events';
 require_once 'db.php';
 
+// Get search and filter parameters
 $search = trim($_GET['search'] ?? '');
 $filter = trim($_GET['filter'] ?? ($_GET['category'] ?? 'all'));
 if ($filter === '') {
 	$filter = 'all';
 }
 
+// Fetch distinct categories for filter dropdown
 $quickCategories = ['Culture', 'Sports', 'Music', 'Family', 'Food', 'Community'];
 $categories = $quickCategories;
 $categorySql = "
@@ -17,6 +19,7 @@ $categorySql = "
 	ORDER BY category ASC
 ";
 
+// Merge quick categories with database categories
 $categoryResult = $conn->query($categorySql);
 if ($categoryResult) {
 	while ($row = $categoryResult->fetch_assoc()) {
@@ -27,6 +30,7 @@ if ($categoryResult) {
 	}
 }
 
+// Define date based filter labels
 $dateFilters = [
 	'newest' => 'Date: Newest First',
 	'oldest' => 'Date: Oldest First',
@@ -36,6 +40,7 @@ $dateFilters = [
 $knownFilters = ['all', 'newest', 'oldest', 'upcoming'];
 $normalizedFilter = strtolower($filter);
 
+// Determine if the filter is a known filter or a category
 if (in_array($normalizedFilter, $knownFilters, true)) {
 	$filter = $normalizedFilter;
 } else {
@@ -65,16 +70,19 @@ $sql = "
 	WHERE 1=1
 ";
 
+// Apply search filter
 if ($search !== '') {
 	$safeSearch = $conn->real_escape_string($search);
 	$sql .= " AND (title LIKE '%$safeSearch%' OR description LIKE '%$safeSearch%' OR location LIKE '%$safeSearch%' OR category LIKE '%$safeSearch%')";
 }
 
+// Apply category filter
 if ($isCategoryFilter) {
 	$safeCategory = $conn->real_escape_string($filter);
 	$sql .= " AND category = '$safeCategory'";
 }
 
+// Apply date sorting filter
 if ($filter === 'upcoming') {
 	$sql .= " AND event_date >= CURDATE() ORDER BY event_date ASC, id DESC";
 } elseif ($filter === 'oldest') {
@@ -83,6 +91,7 @@ if ($filter === 'upcoming') {
 	$sql .= " ORDER BY event_date DESC, id DESC";
 }
 
+// Fetch events based on the SQL query
 $events = [];
 $eventsResult = $conn->query($sql);
 if ($eventsResult) {
@@ -108,11 +117,12 @@ function eventImageUrl($image)
 	return 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80';
 }
 
+// Shorten text for event description preview
 function shortText($text, $max = 120)
 {
 	$value = trim((string)$text);
 	if ($value === '') {
-		return 'No description available yet.';
+		return 'No description available yet';
 	}
 
 	if (strlen($value) <= $max) {
@@ -125,13 +135,14 @@ function shortText($text, $max = 120)
 include 'include/navbar.php';
 ?>
 
+<!-- Hero section  -->
 <section class="mb-4">
 	<div class="p-4 rounded-4 border hero-surface">
 		<div class="d-flex flex-wrap gap-2 justify-content-between align-items-center">
 			<div>
 				<p class="text-uppercase small fw-semibold text-info mb-2">Explore</p>
 				<h1 class="h3 mb-1">All Events</h1>
-				<p class="text-secondary mb-0">Search and filter local events by category or date.</p>
+				<p class="text-secondary mb-0">Search and filter local events by category or date</p>
 				<p class="small mb-0 mt-2"><span class="badge text-bg-info"><?php echo htmlspecialchars($activeFilterLabel); ?></span></p>
 			</div>
 			<span class="badge text-bg-secondary px-3 py-2"><?php echo count($events); ?> event(s)</span>
@@ -139,6 +150,7 @@ include 'include/navbar.php';
 	</div>
 </section>
 
+<!-- Fetch featured events -->
 <section class="mb-4">
 	<form method="get" class="card border-0 shadow-sm p-3">
 		<div class="row g-2 align-items-end">
@@ -170,6 +182,7 @@ include 'include/navbar.php';
 	</form>
 </section>
 
+<!-- Display events -->
 <section class="mb-4">
 	<div class="row g-4">
 		<?php if (!empty($events)): ?>
@@ -196,7 +209,7 @@ include 'include/navbar.php';
 			<div class="col-12">
 				<div class="card border rounded-4 p-4">
 					<h2 class="h5 mb-2">No events found</h2>
-					<p class="text-secondary mb-0">Try changing your search text or filter selection.</p>
+					<p class="text-secondary mb-0">Try changing your search text or filter selection</p>
 				</div>
 			</div>
 		<?php endif; ?>

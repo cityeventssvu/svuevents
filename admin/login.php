@@ -11,10 +11,12 @@ $errorMessage = '';
 $successMessage = '';
 $username = '';
 
+// Check if redirected from registration page
 if (isset($_GET['registered']) && $_GET['registered'] === '1') {
 	$successMessage = 'Account created successfully. You can sign in now.';
 }
 
+// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$username = trim($_POST['username'] ?? '');
 	$password = trim($_POST['password'] ?? '');
@@ -56,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <main class="content-wrap">
 	<div class="container">
+		<!-- Sign up form section -->
 		<div class="row justify-content-center">
 			<div class="col-md-8 col-lg-5">
 				<div class="card border-0 shadow-sm p-4">

@@ -6,10 +6,10 @@
         <div class="row g-3 align-items-center">
             <div class="col-md-7 text-light">
                 <h6 class="mb-1">City Events</h6>
-                <p class="mb-0 text-secondary">Contact: hello@cityevents.local | +1 (555) 123-4567</p>
+                <p class="mb-0 text-secondary">Contact: svu@cityevents.local | +963 111 222 333</p>
             </div>
             <div class="col-md-5 text-md-end text-secondary">
-                <small>&copy; <?php echo date('Y'); ?> City Events. All rights reserved.</small>
+                <small>&copy; <?php echo date('Y'); ?> Svu City Events. All rights reserved</small>
             </div>
         </div>
     </div>

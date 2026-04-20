@@ -7,9 +7,11 @@ if (isset($_SESSION['admin_id'])) {
 	exit;
 }
 
+// Initialize variables for form handling
 $errorMessage = '';
 $username = '';
 
+// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$username = trim($_POST['username'] ?? '');
 	$password = trim($_POST['password'] ?? '');
@@ -50,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	}
 }
 ?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
 <head>
@@ -63,6 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <main class="content-wrap">
 	<div class="container">
+		<!-- Sign up form section -->
 		<div class="row justify-content-center">
 			<div class="col-md-8 col-lg-5">
 				<div class="card border-0 shadow-sm p-4">

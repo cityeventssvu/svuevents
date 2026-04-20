@@ -21,6 +21,7 @@ function eventImageUrl($image)
 	return 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80';
 }
 
+// Fetch event details
 $event = null;
 if ($eventId > 0) {
 	$stmt = $conn->prepare('SELECT id, title, description, category, location, event_date, image FROM events WHERE id = ? LIMIT 1');
@@ -33,6 +34,7 @@ if ($eventId > 0) {
 	}
 }
 
+// Set page title based on event title
 if ($event) {
 	$pageTitle = 'City Events - ' . $event['title'];
 }
@@ -65,6 +67,7 @@ if ($event && !empty($event['category'])) {
 include 'include/navbar.php';
 ?>
 
+<!-- Function to generate event image URL -->
 <?php if (!$event): ?>
 	<section class="mb-4">
 		<div class="card border rounded-4 p-4">
@@ -74,6 +77,7 @@ include 'include/navbar.php';
 		</div>
 	</section>
 <?php else: ?>
+	<!-- Prepare event details and related events -->
 	<?php
 	$eventDateText = !empty($event['event_date']) ? date('M d, Y', strtotime($event['event_date'])) : 'Date to be announced';
 	$eventLocation = $event['location'] ?: 'City Venue';
@@ -89,6 +93,7 @@ include 'include/navbar.php';
 	$shareUrl = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/event.php?id=' . (int)$event['id'];
 	?>
 
+	<!-- Display event details -->
 	<section class="mb-4">
 		<div class="card border-0 shadow-sm overflow-hidden">
 			<img src="<?php echo htmlspecialchars(eventImageUrl($event['image'])); ?>" class="card-img-top featured-image" alt="<?php echo htmlspecialchars($event['title']); ?>">
@@ -114,7 +119,7 @@ include 'include/navbar.php';
 			</div>
 		</div>
 	</section>
-
+	<!-- Related events section -->
 	<section class="mb-4">
 		<div class="d-flex justify-content-between align-items-center mb-3">
 			<h2 class="h4 mb-0">Related Events</h2>
@@ -149,6 +154,7 @@ include 'include/navbar.php';
 		</div>
 	</section>
 
+	<!-- JavaScript for share button functionality -->
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
 			var shareButton = document.getElementById('shareEventBtn');

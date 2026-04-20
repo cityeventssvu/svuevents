@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var toggleButton = document.getElementById('themeToggle');
 	var toggleIcon = document.getElementById('themeToggleIcon');
 	var toggleText = document.getElementById('themeToggleText');
+	var scrollTopButton = document.getElementById('scrollTopButton');
 
 	function getPreferredTheme() {
 		var savedTheme = localStorage.getItem('theme');
@@ -46,6 +47,27 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	applyTheme(getPreferredTheme());
+
+	function updateScrollTopButton() {
+		if (!scrollTopButton) {
+			return;
+		}
+
+		scrollTopButton.hidden = window.scrollY < 320;
+	}
+
+	if (scrollTopButton) {
+		updateScrollTopButton();
+
+		window.addEventListener('scroll', updateScrollTopButton, { passive: true });
+
+		scrollTopButton.addEventListener('click', function () {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		});
+	}
 
 	if (toggleButton) {
 		toggleButton.addEventListener('click', function () {

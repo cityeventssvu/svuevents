@@ -120,6 +120,10 @@ if ($eventsResult) {
 	</div>
 </main>
 
+<button type="button" class="btn btn-info scroll-top-btn" id="scrollTopButton" aria-label="Scroll to top" hidden>
+	<i class="bi bi-arrow-up-short" aria-hidden="true"></i>
+</button>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="../assets/js/main.js"></script>
 </body>

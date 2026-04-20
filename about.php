@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'City Events - About';
+$pageTitle = 'Svu City Events - About';
 include 'include/navbar.php';
 ?>
 

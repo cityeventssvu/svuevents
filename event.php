@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'City Events - Event Details';
+$pageTitle = 'Svu City Events - Event Details';
 require_once 'db.php';
 
 $eventId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
@@ -36,7 +36,7 @@ if ($eventId > 0) {
 
 // Set page title based on event title
 if ($event) {
-	$pageTitle = 'City Events - ' . $event['title'];
+	$pageTitle = 'Svu City Events - ' . $event['title'];
 }
 
 $relatedEvents = [];

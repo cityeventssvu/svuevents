@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'City Events - Home';
+$pageTitle = 'Svu City Events - Home';
 require_once 'db.php';
 
 $featuredEvents = [];

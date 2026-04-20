@@ -28,9 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$imageUrl = trim($_POST['image_url'] ?? '');
 
 	if ($title === '' || $eventDate === '') {
-		$errorMessage = 'Title and date are required.';
+		$errorMessage = 'Title and date are required';
 	} elseif (!in_array($category, $predefinedCategories, true)) {
-		$errorMessage = 'Please select a valid category.';
+		$errorMessage = 'Please select a valid category';
 	} else {
 		$finalImage = $imageUrl;
 		// Handle image upload if a file was provided

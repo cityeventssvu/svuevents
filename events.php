@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'City Events - All Events';
+$pageTitle = 'Svu City Events - All Events';
 require_once 'db.php';
 
 // Get search and filter parameters

@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'City Events - Contact';
+$pageTitle = 'Svu City Events - Contact';
 
 $name = '';
 $email = '';
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	} elseif (!$isEmailValid) {
 		$errorMessage = 'Please enter a valid email address.';
 	} else {
-		$successMessage = 'Message received. This is a demo submission, so no email was sent.';
+		$successMessage = 'Message received This is a demo submission';
 		$name = '';
 		$email = '';
 		$message = '';

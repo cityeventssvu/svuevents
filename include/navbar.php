@@ -1,6 +1,6 @@
 <?php
 if (!isset($pageTitle)) {
-    $pageTitle = 'City Events';
+    $pageTitle = 'Svu City Events';
 }
 
 if (session_status() === PHP_SESSION_NONE) {
@@ -23,7 +23,7 @@ $isAdminLoggedIn = isset($_SESSION['admin_id']);
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="siteNavbar">
     <div class="container">
-        <a class="navbar-brand" href="index.php">City Events</a>
+        <a class="navbar-brand" href="index.php">Svu City Events</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

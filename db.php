@@ -24,11 +24,7 @@ if ($conn->connect_error) {
 	die('Connection failed: ' . $conn->connect_error);
 }
 
-// Create database if it does not exist
-// NOTE FOR ONLINE HOSTING:
-// Shared hosts (like InfinityFree) usually do NOT allow CREATE DATABASE from PHP.
-// In production, create the database from your hosting control panel first,
-// then either remove this block or leave it only for local development.
+
 $createDbSql = "CREATE DATABASE IF NOT EXISTS `$dbName`";
 if (!$conn->query($createDbSql)) {
 	die('Database creation failed: ' . $conn->error);

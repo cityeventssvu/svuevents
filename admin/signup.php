@@ -85,16 +85,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						<div>
 							<label for="username" class="form-label">Username</label>
 							<input type="text" id="username" name="username" class="form-control" value="<?php echo htmlspecialchars($username); ?>" required>
+							<div class="invalid-feedback">Username is required.</div>
 						</div>
 
 						<div>
 							<label for="password" class="form-label">Password</label>
 							<input type="password" id="password" name="password" class="form-control" required>
+							<div class="invalid-feedback">Password is required.</div>
 						</div>
 
 						<div>
 							<label for="confirm_password" class="form-label">Confirm Password</label>
 							<input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
+							<div class="invalid-feedback">Please confirm your password.</div>
 						</div>
 
 						<button type="submit" class="btn btn-info">
